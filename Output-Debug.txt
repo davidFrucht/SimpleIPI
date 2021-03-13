@@ -1,0 +1,76 @@
+﻿'Calc.exe' (Win32): Loaded 'C:\Users\david\source\repos\Calc\x64\Release\Calc.exe'. Symbols loaded.
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\ntdll.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\mscoree.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\kernel32.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\KernelBase.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\ucrtbase.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\vcruntime140.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\msvcp140.dll'. 
+The thread 0x618c has exited with code 0 (0x0).
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\advapi32.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\msvcrt.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\sechost.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\rpcrt4.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscoreei.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\shlwapi.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\combase.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\bcryptprimitives.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\gdi32.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\win32u.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\gdi32full.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\msvcp_win.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\user32.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\imm32.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\kernel.appcore.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\version.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\vcruntime140_clr0400.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\ucrtbase_clr0400.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\psapi.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\assembly\NativeImages_v4.0.30319_64\mscorlib\828ccaa50bf1ef868f4ecc1cf23f7dff\mscorlib.ni.dll'. 
+'Calc.exe' (CLR v4.0.30319: DefaultDomain): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\ole32.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\uxtheme.dll'. 
+'Calc.exe' (CLR v4.0.30319: DefaultDomain): Loaded 'C:\Users\david\source\repos\Calc\x64\Release\Calc.exe'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+Symbols for the module 'Calc.exe' were not loaded.
+
+1. Use a debug build configuration or disable the debug option 'Enable Just My Code'. 
+2. Check the 'Symbols' settings under debugging options.'Calc.exe' (Win32): Loaded 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clrjit.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\assembly\NativeImages_v4.0.30319_64\System\e5ca2506c5609c721348b1ed0a2fb5af\System.ni.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Drawing\e3df1e1bc9dee7f61914e26e1ac41fab\System.Drawing.ni.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Windows.Forms\b6797cd8f0c5faf421a0c1e673ff4589\System.Windows.Forms.ni.dll'. 
+'Calc.exe' (CLR v4.0.30319: Calc.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'Calc.exe' (CLR v4.0.30319: Calc.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'Calc.exe' (CLR v4.0.30319: Calc.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'Calc.exe' (Win32): Loaded 'C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Core\fca3f5643a7b4360ba40ab22677e6774\System.Core.ni.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Configuration\d606ffc2a8a10fd735c1ee0a79ff312f\System.Configuration.ni.dll'. 
+'Calc.exe' (CLR v4.0.30319: Calc.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'Calc.exe' (CLR v4.0.30319: Calc.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'Calc.exe' (Win32): Loaded 'C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Xml\4de06f446f2e33ce508101ea7d492486\System.Xml.ni.dll'. 
+'Calc.exe' (CLR v4.0.30319: Calc.exe): Loaded 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll'. Skipped loading symbols. Module is optimized and the debugger option 'Just My Code' is enabled.
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\shell32.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\cfgmgr32.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\SHCore.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\windows.storage.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\profapi.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\powrprof.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\umpdc.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\cryptsp.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\bcrypt.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\rsaenh.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\cryptbase.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.18362.1016_none_73b3274ad815f571\comctl32.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.18362.1016_none_cf6529a13ef454b2\GdiPlus.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\msctf.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\oleaut32.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\DWrite.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.1016_none_9e7a36bbe461dae4\comctl32.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\TextInputFramework.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\CoreMessaging.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\CoreUIComponents.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\ntmarta.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\WinTypes.dll'. 
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\WinTypes.dll'. 
+'Calc.exe' (Win32): Unloaded 'C:\Windows\System32\WinTypes.dll'
+'Calc.exe' (Win32): Loaded 'C:\Windows\System32\iertutil.dll'. 
+The program '[1420] Calc.exe' has exited with code 0 (0x0).
