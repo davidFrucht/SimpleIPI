@@ -2,6 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #endif
 
+#include "Header.h"
 #include "MyForm.h"
 #include "report.h"
 #include "alertSetup.h"
@@ -11,6 +12,7 @@
 #include "pelcoD.h"
 #include "onvif.h"
 #include "DFSL_Protocol.h"
+#include "json.h"
 
 
 #include <iostream>
@@ -72,6 +74,8 @@ extern int numOfclicks;
 extern float polyArrayX[126];
 extern float polyArrayY[126];
 extern int HZFlagChecked;
+
+extern char* JSONUrl;
 
 
 gcroot<Bitmap^> g;
@@ -538,6 +542,8 @@ System::Void Calc::MyForm::button1_Click_2(System::Object^ sender, System::Event
 
 	MapsHtml = fopen("c:\\1\\maps.html", "w");
 
+	char JSONUrlInit[128];
+	sprintf(JSONUrlInit, "%sgeo.json", JSONUrl);
 
 	fprintf(MapsHtml, "<HTML> <HEAD> <META NAME = \"GENERATOR\" Content = \"Microsoft Visual Studio\"> <TITLE></TITLE> </HEAD> <BODY> <div> <iframe width = \"333\" height = \"333\" frameBorder = \"0\" src = \"https://www.bing.com/maps/embed?h=340&w=340&cp=%lf~%lf&lvl=18&typ=d&sty=a&src=SHELL&FORM=MBEDV8\" scrolling = \"no\"> </iframe> </div> </BODY> </HTML>", lat, lon);
 
@@ -545,7 +551,11 @@ System::Void Calc::MyForm::button1_Click_2(System::Object^ sender, System::Event
 
 	this->webView22->CoreWebView2->Navigate("c:\\1\\maps.html");
 	//watcher->Stop();
-	
+	char buff[128];
+
+	sprintf(buff, "{\"lat\":\"%.6f\",\"lon\":\"%.6f\"}", lat, lon);
+
+	sendJSON(buff, JSONUrlInit);
 }
 
 /*
@@ -1032,9 +1042,9 @@ void Calc::setNewZero()
 void Calc::exitPro()
 {
 	cv::waitKey(30) == 1;
-	fclose(fptr);
+//	fclose(fptr);
 	if (connectionFlag == 1)
-		CloseHandle(hComm);      //Closing the Serial Port
+		CloseHandle    (hComm);      //Closing the Serial Port
 	exit(EXIT_SUCCESS);
 	
 }

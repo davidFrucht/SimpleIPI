@@ -8,6 +8,7 @@
 #include "sendMail.h"
 #include "json.h"
 #include "DFSL_Protocol.h"
+#include "base64.h"
 
 #include <iostream>
 #include <string.h>
@@ -31,7 +32,7 @@ using namespace Calc;
 using namespace std;
 
 HANDLE hCommPLS;														// Handle to the Serial port
-wchar_t  ComPortNamePLS[] = L"\\\\.\\COM6";								// Name of the Serial port(May Change) to be opened,
+wchar_t  ComPortNamePLS[] = L"\\\\.\\COM3";								// Name of the Serial port(May Change) to be opened,
 BOOL  StatusPLS;														// Status of the various operations 
 DWORD dwEventMaskPLS;													// Event mask to trigger
 byte  TempCharPLS;														// Temperory Character
@@ -71,14 +72,20 @@ extern char* SMTPChar;
 extern char* UserNameChar;
 extern char* passwordChar;
 
+extern int ptzProtocol;
+
 extern char* JSONUrl;
+
+char JSONUrlMessages[128];
 
 int plsConnectedFlag;
 
 float intrutdersAzimuth = -1;									// this var is for the timer to check if the var has changed. if so, it will print a message to the UI log
 float intruderRange	= -1;										// this var is for the timer to check if the var has changed. if so, it will print a message to the UI log
 string errorMessage = "OK";
+string encoded64Pic;
 
+unsigned char try1[1000];
 
 // related to Hidden Zone - decleared in sensorSetup.cpp
 extern float polyArrayX[126];
@@ -173,6 +180,9 @@ DWORD WINAPI ThreadOpenCv(void* data)
 
 	cv::imwrite(picFile, src);
 
+	auto* enc_msg = reinterpret_cast<unsigned char*>(buf.data());
+	encoded64Pic = base64_encode(enc_msg, buf.size());
+
 	buf.clear();
 
 	FILE* listOfpicTextFilePTR;
@@ -190,7 +200,7 @@ DWORD WINAPI ThreadOpenCv(void* data)
 void Calc::initatePls()
 
 {
-	hCommPLS = connectCom(6, 115200);
+	hCommPLS = connectCom(3, 19200);
 	while (1)
 	{
 		Sleep(500);
@@ -268,7 +278,11 @@ void Calc::decipherMessageIntruderDetected() {
 
 	// this is for panning the PTZ camera
 	var = azimuth;											// var is in myform.cpp
-	sendPtzPan();
+
+	if (ptzProtocol == 0)
+		sendPtzPan();
+	if (ptzProtocol == 1)
+		moveDirectionAbselute(var, 1);
 
 	/*
 	char hour_beg[2];
@@ -299,7 +313,19 @@ void Calc::decipherMessageIntruderDetected() {
 	
 	strcpy(LogFile, dateDir);
 	strcpy(picFile, dateDir);
-	sprintf(dateDir + strlen(dateDir), "%d-%d-%d", tm.tm_mon + 1, tm.tm_mday, tm.tm_year + 1900);
+
+	if (tm.tm_mon + 1 < 10 && tm.tm_mday < 10)
+		sprintf(dateDir + strlen(dateDir), "0%d-0%d-%d", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
+
+	else if ((tm.tm_mon + 1 < 10 && tm.tm_mday >= 10))
+		sprintf(dateDir + strlen(dateDir), "0%d-%d-%d", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
+
+	else if ((tm.tm_mon + 1 >= 10 && tm.tm_mday < 10))
+		sprintf(dateDir + strlen(dateDir), "%d-0%d-%d", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
+
+	else 
+		sprintf(dateDir + strlen(dateDir), "%d-%d-%d", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
+	
 	strcpy(LogFile, dateDir);
 	sprintf(LogFile + strlen(LogFile), "\\");
 	strcpy(picFile, dateDir);
@@ -325,11 +351,20 @@ void Calc::decipherMessageIntruderDetected() {
 		sendMailSMTP(FromChar, ToChar, SMTPChar, UserNameChar, passwordChar, azimuth, range);
 
 	if (flagJSONAlert == 1)
-		{
-			char buff[100];
-			snprintf(buff, sizeof(buff), "{\"type\":\"Intruder Detected\",\"Range\":\"%.2f\",\"Azimuth\":\"%.2f\"}", range, azimuth);
-			sendJSON(buff, JSONUrl);
-		}
+	{
+		char buff[600000];
+		sprintf(JSONUrlMessages, "%smessage_list.json", JSONUrl);
+		//char *buff = (char*)malloc(encoded64Pic.length() + 256);;
+
+		//int num = sizeof(encoded64Pic);
+
+		//buff = (char*)malloc(encoded64Pic.length() + 256);
+
+		//snprintf(buff, sizeof(buff), "{\"type\":\"Intruder Detected\",\"Range\":\"%.2f\",\"Azimuth\":\"%.2f\"}", range, azimuth);
+		sprintf(buff, "{\"type\":\"Intruder Detected\",\"Range\":\"%.2f\",\"Azimuth\":\"%.2f\",\"Image\":\"%s\"}", range, azimuth, encoded64Pic.c_str());
+		//sprintf(JSONUrl + strlen(JSONUrl), "message_list.json");
+		sendJSON(buff, JSONUrlMessages);
+	}
 
 
 }

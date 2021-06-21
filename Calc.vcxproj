@@ -176,10 +176,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="alertSetup.cpp" />
+    <ClCompile Include="Base64.cpp" />
     <ClCompile Include="cameraSetup.cpp" />
+    <ClCompile Include="json.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="onvif.cpp" />
     <ClCompile Include="pls.cpp" />
     <ClCompile Include="report.cpp" />
+    <ClCompile Include="sendMail.cpp" />
     <ClCompile Include="sensorSetup.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +191,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="AT_SMS.h" />
+    <ClInclude Include="base64.h" />
     <ClInclude Include="cameraSetup.h">
       <FileType>CppForm</FileType>
     </ClInclude>

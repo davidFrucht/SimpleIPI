@@ -1,8 +1,11 @@
 #pragma once
+#include "Header.h"
+
 #include <stdio.h>
 #include <string.h>
 #include <curl/curl.h>
 
+/*
 #define FROM_ADDR    fromAddress
 #define TO_ADDR      toAddress
 #define FROM_MAIL "DFSL PLS " FROM_ADDR
@@ -13,8 +16,14 @@ static char payload_text[11][70] = { "\0" };
 struct upload_status {
     int lines_read;
 };
+*/
 
-static size_t payload_source(void* ptr, size_t size, size_t nmemb, void* userp)
+
+
+static size_t payload_source(void* ptr, size_t size, size_t nmemb, void* userp);
+int sendMailSMTP(char fromAddress[], char toAddress[], char smtp[], char userName[], char password[], float azimuth, float range);
+
+/*
 {
     struct upload_status* upload_ctx = (struct upload_status*)userp;
     const char* data;
@@ -35,6 +44,7 @@ static size_t payload_source(void* ptr, size_t size, size_t nmemb, void* userp)
 
     return 0;
 }
+
 
 inline int sendMailSMTP(char fromAddress[], char toAddress[], char smtp[], char userName[], char password[], float azimuth, float range)
 {
@@ -93,4 +103,6 @@ inline int sendMailSMTP(char fromAddress[], char toAddress[], char smtp[], char 
 
     return (int)res;
 }
+
+*/
 

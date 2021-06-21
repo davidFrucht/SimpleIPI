@@ -1,5 +1,6 @@
 
 
+//#pragma once
 
 #include "alertSetup.h"
 #include "Header.h"

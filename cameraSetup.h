@@ -177,11 +177,17 @@ private: System::Windows::Forms::Button^ btConnectCV;
 			   this->radioBtnSerialCamera = (gcnew System::Windows::Forms::RadioButton());
 			   this->radioBtnLanCamera = (gcnew System::Windows::Forms::RadioButton());
 			   this->groupBoxVideoCameraFeed = (gcnew System::Windows::Forms::GroupBox());
-			   this->panelVideoFeenSerial = (gcnew System::Windows::Forms::Panel());
 			   this->panelVideoFeedLan = (gcnew System::Windows::Forms::Panel());
 			   this->label7 = (gcnew System::Windows::Forms::Label());
 			   this->btnConnectVideoFeedLan = (gcnew System::Windows::Forms::Button());
 			   this->txtLanVideoFeedLink = (gcnew System::Windows::Forms::TextBox());
+			   this->panelVideoFeenSerial = (gcnew System::Windows::Forms::Panel());
+			   this->btnCamera2 = (gcnew System::Windows::Forms::Button());
+			   this->btnCamera1 = (gcnew System::Windows::Forms::Button());
+			   this->btnCamera3 = (gcnew System::Windows::Forms::Button());
+			   this->btConnectCV = (gcnew System::Windows::Forms::Button());
+			   this->btnCamera4 = (gcnew System::Windows::Forms::Button());
+			   this->btnCamera5 = (gcnew System::Windows::Forms::Button());
 			   this->btnDisconnectLanVideoFeed = (gcnew System::Windows::Forms::Button());
 			   this->radioButradioButtonVideoFeedLan = (gcnew System::Windows::Forms::RadioButton());
 			   this->radioButtonVideoFeedSerial = (gcnew System::Windows::Forms::RadioButton());
@@ -232,16 +238,10 @@ private: System::Windows::Forms::Button^ btConnectCV;
 			   this->label2 = (gcnew System::Windows::Forms::Label());
 			   this->label1 = (gcnew System::Windows::Forms::Label());
 			   this->pitureBoxchooseCamera = (gcnew System::Windows::Forms::PictureBox());
-			   this->btnCamera1 = (gcnew System::Windows::Forms::Button());
-			   this->btnCamera2 = (gcnew System::Windows::Forms::Button());
-			   this->btnCamera3 = (gcnew System::Windows::Forms::Button());
-			   this->btnCamera4 = (gcnew System::Windows::Forms::Button());
-			   this->btnCamera5 = (gcnew System::Windows::Forms::Button());
-			   this->btConnectCV = (gcnew System::Windows::Forms::Button());
 			   this->groupBoxPelcoCam->SuspendLayout();
 			   this->groupBoxVideoCameraFeed->SuspendLayout();
-			   this->panelVideoFeenSerial->SuspendLayout();
 			   this->panelVideoFeedLan->SuspendLayout();
+			   this->panelVideoFeenSerial->SuspendLayout();
 			   this->PanelRadioBoxPTZControl->SuspendLayout();
 			   this->groupBox1->SuspendLayout();
 			   this->groupboxTargetCaptureParameters->SuspendLayout();
@@ -414,7 +414,7 @@ private: System::Windows::Forms::Button^ btConnectCV;
 			   this->txbBoxCamURL->Name = L"txbBoxCamURL";
 			   this->txbBoxCamURL->Size = System::Drawing::Size(170, 20);
 			   this->txbBoxCamURL->TabIndex = 7;
-			   this->txbBoxCamURL->Text = L"http://192.168.0.5/onvif/PTZ";
+			   this->txbBoxCamURL->Text = L"http://192.168.200.117/onvif/PTZ";
 			   // 
 			   // btnDisconnectPelcoCam
 			   // 
@@ -491,19 +491,6 @@ private: System::Windows::Forms::Button^ btConnectCV;
 			   this->groupBoxVideoCameraFeed->TabStop = false;
 			   this->groupBoxVideoCameraFeed->Text = L"Video Feed";
 			   // 
-			   // panelVideoFeenSerial
-			   // 
-			   this->panelVideoFeenSerial->Controls->Add(this->btnCamera2);
-			   this->panelVideoFeenSerial->Controls->Add(this->btnCamera1);
-			   this->panelVideoFeenSerial->Controls->Add(this->btnCamera3);
-			   this->panelVideoFeenSerial->Controls->Add(this->btConnectCV);
-			   this->panelVideoFeenSerial->Controls->Add(this->btnCamera4);
-			   this->panelVideoFeenSerial->Controls->Add(this->btnCamera5);
-			   this->panelVideoFeenSerial->Location = System::Drawing::Point(6, 21);
-			   this->panelVideoFeenSerial->Name = L"panelVideoFeenSerial";
-			   this->panelVideoFeenSerial->Size = System::Drawing::Size(275, 155);
-			   this->panelVideoFeenSerial->TabIndex = 18;
-			   // 
 			   // panelVideoFeedLan
 			   // 
 			   this->panelVideoFeedLan->Controls->Add(this->label7);
@@ -540,7 +527,80 @@ private: System::Windows::Forms::Button^ btConnectCV;
 			   this->txtLanVideoFeedLink->Name = L"txtLanVideoFeedLink";
 			   this->txtLanVideoFeedLink->Size = System::Drawing::Size(170, 20);
 			   this->txtLanVideoFeedLink->TabIndex = 13;
-			   this->txtLanVideoFeedLink->Text = L"http://admin:12345abc@192.168.0.5/ISAPI/Streaming/channels/102/httpPreview";
+			   this->txtLanVideoFeedLink->Text = L"http://admin:12345abc@192.168.200.117/ISAPI/Streaming/channels/102/httpPreview";
+			   // 
+			   // panelVideoFeenSerial
+			   // 
+			   this->panelVideoFeenSerial->Controls->Add(this->btnCamera2);
+			   this->panelVideoFeenSerial->Controls->Add(this->btnCamera1);
+			   this->panelVideoFeenSerial->Controls->Add(this->btnCamera3);
+			   this->panelVideoFeenSerial->Controls->Add(this->btConnectCV);
+			   this->panelVideoFeenSerial->Controls->Add(this->btnCamera4);
+			   this->panelVideoFeenSerial->Controls->Add(this->btnCamera5);
+			   this->panelVideoFeenSerial->Location = System::Drawing::Point(6, 21);
+			   this->panelVideoFeenSerial->Name = L"panelVideoFeenSerial";
+			   this->panelVideoFeenSerial->Size = System::Drawing::Size(275, 155);
+			   this->panelVideoFeenSerial->TabIndex = 18;
+			   // 
+			   // btnCamera2
+			   // 
+			   this->btnCamera2->Location = System::Drawing::Point(97, 20);
+			   this->btnCamera2->Name = L"btnCamera2";
+			   this->btnCamera2->Size = System::Drawing::Size(75, 23);
+			   this->btnCamera2->TabIndex = 24;
+			   this->btnCamera2->Text = L"2";
+			   this->btnCamera2->UseVisualStyleBackColor = true;
+			   this->btnCamera2->Click += gcnew System::EventHandler(this, &cameraSetup::btnCamera2_Click);
+			   // 
+			   // btnCamera1
+			   // 
+			   this->btnCamera1->Location = System::Drawing::Point(16, 20);
+			   this->btnCamera1->Name = L"btnCamera1";
+			   this->btnCamera1->Size = System::Drawing::Size(75, 23);
+			   this->btnCamera1->TabIndex = 23;
+			   this->btnCamera1->Text = L"1";
+			   this->btnCamera1->UseVisualStyleBackColor = true;
+			   this->btnCamera1->Click += gcnew System::EventHandler(this, &cameraSetup::btnCamera1_Click);
+			   // 
+			   // btnCamera3
+			   // 
+			   this->btnCamera3->Location = System::Drawing::Point(178, 20);
+			   this->btnCamera3->Name = L"btnCamera3";
+			   this->btnCamera3->Size = System::Drawing::Size(75, 23);
+			   this->btnCamera3->TabIndex = 25;
+			   this->btnCamera3->Text = L"3";
+			   this->btnCamera3->UseVisualStyleBackColor = true;
+			   this->btnCamera3->Click += gcnew System::EventHandler(this, &cameraSetup::btnCamera3_Click);
+			   // 
+			   // btConnectCV
+			   // 
+			   this->btConnectCV->Location = System::Drawing::Point(53, 113);
+			   this->btConnectCV->Name = L"btConnectCV";
+			   this->btConnectCV->Size = System::Drawing::Size(181, 29);
+			   this->btConnectCV->TabIndex = 28;
+			   this->btConnectCV->Text = L"Connect";
+			   this->btConnectCV->UseVisualStyleBackColor = true;
+			   this->btConnectCV->Click += gcnew System::EventHandler(this, &cameraSetup::btConnectCV_Click);
+			   // 
+			   // btnCamera4
+			   // 
+			   this->btnCamera4->Location = System::Drawing::Point(16, 58);
+			   this->btnCamera4->Name = L"btnCamera4";
+			   this->btnCamera4->Size = System::Drawing::Size(75, 23);
+			   this->btnCamera4->TabIndex = 26;
+			   this->btnCamera4->Text = L"4";
+			   this->btnCamera4->UseVisualStyleBackColor = true;
+			   this->btnCamera4->Click += gcnew System::EventHandler(this, &cameraSetup::btnCamera4_Click);
+			   // 
+			   // btnCamera5
+			   // 
+			   this->btnCamera5->Location = System::Drawing::Point(97, 58);
+			   this->btnCamera5->Name = L"btnCamera5";
+			   this->btnCamera5->Size = System::Drawing::Size(75, 23);
+			   this->btnCamera5->TabIndex = 27;
+			   this->btnCamera5->Text = L"5";
+			   this->btnCamera5->UseVisualStyleBackColor = true;
+			   this->btnCamera5->Click += gcnew System::EventHandler(this, &cameraSetup::btnCamera5_Click);
 			   // 
 			   // btnDisconnectLanVideoFeed
 			   // 
@@ -982,66 +1042,6 @@ private: System::Windows::Forms::Button^ btConnectCV;
 			   this->pitureBoxchooseCamera->TabIndex = 22;
 			   this->pitureBoxchooseCamera->TabStop = false;
 			   // 
-			   // btnCamera1
-			   // 
-			   this->btnCamera1->Location = System::Drawing::Point(16, 20);
-			   this->btnCamera1->Name = L"btnCamera1";
-			   this->btnCamera1->Size = System::Drawing::Size(75, 23);
-			   this->btnCamera1->TabIndex = 23;
-			   this->btnCamera1->Text = L"1";
-			   this->btnCamera1->UseVisualStyleBackColor = true;
-			   this->btnCamera1->Click += gcnew System::EventHandler(this, &cameraSetup::btnCamera1_Click);
-			   // 
-			   // btnCamera2
-			   // 
-			   this->btnCamera2->Location = System::Drawing::Point(97, 20);
-			   this->btnCamera2->Name = L"btnCamera2";
-			   this->btnCamera2->Size = System::Drawing::Size(75, 23);
-			   this->btnCamera2->TabIndex = 24;
-			   this->btnCamera2->Text = L"2";
-			   this->btnCamera2->UseVisualStyleBackColor = true;
-			   this->btnCamera2->Click += gcnew System::EventHandler(this, &cameraSetup::btnCamera2_Click);
-			   // 
-			   // btnCamera3
-			   // 
-			   this->btnCamera3->Location = System::Drawing::Point(178, 20);
-			   this->btnCamera3->Name = L"btnCamera3";
-			   this->btnCamera3->Size = System::Drawing::Size(75, 23);
-			   this->btnCamera3->TabIndex = 25;
-			   this->btnCamera3->Text = L"3";
-			   this->btnCamera3->UseVisualStyleBackColor = true;
-			   this->btnCamera3->Click += gcnew System::EventHandler(this, &cameraSetup::btnCamera3_Click);
-			   // 
-			   // btnCamera4
-			   // 
-			   this->btnCamera4->Location = System::Drawing::Point(16, 58);
-			   this->btnCamera4->Name = L"btnCamera4";
-			   this->btnCamera4->Size = System::Drawing::Size(75, 23);
-			   this->btnCamera4->TabIndex = 26;
-			   this->btnCamera4->Text = L"4";
-			   this->btnCamera4->UseVisualStyleBackColor = true;
-			   this->btnCamera4->Click += gcnew System::EventHandler(this, &cameraSetup::btnCamera4_Click);
-			   // 
-			   // btnCamera5
-			   // 
-			   this->btnCamera5->Location = System::Drawing::Point(97, 58);
-			   this->btnCamera5->Name = L"btnCamera5";
-			   this->btnCamera5->Size = System::Drawing::Size(75, 23);
-			   this->btnCamera5->TabIndex = 27;
-			   this->btnCamera5->Text = L"5";
-			   this->btnCamera5->UseVisualStyleBackColor = true;
-			   this->btnCamera5->Click += gcnew System::EventHandler(this, &cameraSetup::btnCamera5_Click);
-			   // 
-			   // btConnectCV
-			   // 
-			   this->btConnectCV->Location = System::Drawing::Point(53, 113);
-			   this->btConnectCV->Name = L"btConnectCV";
-			   this->btConnectCV->Size = System::Drawing::Size(181, 29);
-			   this->btConnectCV->TabIndex = 28;
-			   this->btConnectCV->Text = L"Connect";
-			   this->btConnectCV->UseVisualStyleBackColor = true;
-			   this->btConnectCV->Click += gcnew System::EventHandler(this, &cameraSetup::btConnectCV_Click);
-			   // 
 			   // cameraSetup
 			   // 
 			   this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1061,9 +1061,9 @@ private: System::Windows::Forms::Button^ btConnectCV;
 			   this->groupBoxPelcoCam->ResumeLayout(false);
 			   this->groupBoxPelcoCam->PerformLayout();
 			   this->groupBoxVideoCameraFeed->ResumeLayout(false);
-			   this->panelVideoFeenSerial->ResumeLayout(false);
 			   this->panelVideoFeedLan->ResumeLayout(false);
 			   this->panelVideoFeedLan->PerformLayout();
+			   this->panelVideoFeenSerial->ResumeLayout(false);
 			   this->PanelRadioBoxPTZControl->ResumeLayout(false);
 			   this->PanelRadioBoxPTZControl->PerformLayout();
 			   this->groupBox1->ResumeLayout(false);

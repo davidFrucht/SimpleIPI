@@ -28,8 +28,6 @@ int i1 = 0;
 
 void sendPtzPanPelcoHeader(HANDLE hComm, int var)
 {
-
-
 	byte address = 0x02;				// camera address
 	const byte cmnd1 = 0x00;			// fixed value for paning to specific point
 	const byte cmnd2 = 0x4B;			// fixed value for paning to specific point

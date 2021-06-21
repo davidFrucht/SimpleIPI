@@ -22,6 +22,7 @@ System::Void Calc::report::monthCalendar1_DateSelected(System::Object^ sender, S
 	System::String^ date = this->monthCalendar1->SelectionRange->Start.ToString();
 	std::string dateStr = static_cast<const char*>(Marshal::StringToHGlobalAnsi(date).ToPointer());
 	char dateChar[128] = "c:\\SimpleIPI\\REPORT\\";
+
 	sprintf(dateChar + strlen(dateChar), dateStr.c_str());
 
 	// deleting the time
@@ -75,17 +76,23 @@ System::Void Calc::report::monthCalendar1_DateSelected(System::Object^ sender, S
 System::Void Calc::report::btnEventPictureForward_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	pictureNumber++;
-
-	if (pictureNumber == ManagedGlobals::GalleryArray->Length)
+	try
 	{
-		this->btnBack->Enabled = true;
-		this->btnEventPictureForward->Enabled = false;
+		if (pictureNumber == ManagedGlobals::GalleryArray->Length)
+		{
+			this->btnBack->Enabled = true;
+			this->btnEventPictureForward->Enabled = false;
+		}
+
+		if (pictureNumber < ManagedGlobals::GalleryArray->Length)
+		{
+			this->btnEventPictureForward->Enabled = true;
+			pictureBox1->Load(ManagedGlobals::GalleryArray[pictureNumber]);
+		}
 	}
-
-	if (pictureNumber < ManagedGlobals::GalleryArray->Length)
+	catch(...)
 	{
-		this->btnEventPictureForward->Enabled = true;
-		pictureBox1->Load(ManagedGlobals::GalleryArray[pictureNumber]);
+		MessageBox::Show("No Values");
 	}
 
 }
@@ -94,22 +101,30 @@ System::Void Calc::report::btnBack_Click(System::Object^ sender, System::EventAr
 {
 	pictureNumber--;
 
-	if (pictureNumber == 0)
+	try
 	{
-		this->btnEventPictureForward->Enabled = true;
-		this->btnBack->Enabled = false;
-	}
 
-	if (pictureNumber > 0)
-	{
-		this->btnBack->Enabled = true;
-		pictureBox1->Load(ManagedGlobals::GalleryArray[pictureNumber]);
-	}
+		if (pictureNumber == 0)
+		{
+			this->btnEventPictureForward->Enabled = true;
+			this->btnBack->Enabled = false;
+		}
 
-	if (pictureNumber < ManagedGlobals::GalleryArray->Length)
+		if (pictureNumber > 0)
+		{
+			this->btnBack->Enabled = true;
+			pictureBox1->Load(ManagedGlobals::GalleryArray[pictureNumber]);
+		}
+
+		if (pictureNumber < ManagedGlobals::GalleryArray->Length)
+		{
+			this->btnEventPictureForward->Enabled = true;
+			pictureBox1->Load(ManagedGlobals::GalleryArray[pictureNumber]);
+		}
+	}
+	catch (...)
 	{
-		this->btnEventPictureForward->Enabled = true;
-		pictureBox1->Load(ManagedGlobals::GalleryArray[pictureNumber]);
+		MessageBox::Show("No Values");
 	}
 	
 }

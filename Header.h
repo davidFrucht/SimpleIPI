@@ -1,6 +1,8 @@
 #pragma once
 #include "MyForm.h"
-//#include "connectToCom.h"
+#include "onvif.h"
+#include "json.h"
+
 #include <string>
 #include <opencv2/opencv.hpp>
 
@@ -33,8 +35,6 @@ namespace Calc {
 	void initCellPhone();
 	int checkConnectionCell();
 	void detecionCellAlert();
-
-	
 
 	extern int temp;
 	extern int var;

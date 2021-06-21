@@ -3,7 +3,8 @@
 #include <curl/curl.h>
 
 
-inline void sendJSON(char buff[], char url[])
+void sendJSON(char* buff, char url[]);
+/*
 {
 	CURLcode ret;
 	CURL* hnd;
@@ -32,3 +33,4 @@ inline void sendJSON(char buff[], char url[])
 	slist1 = NULL;
 	
 }
+*/

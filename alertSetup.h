@@ -1,5 +1,6 @@
 #pragma once
 #include "Header.h"
+//#include "json.h"
 #include <string.h>
 #include <iostream>
 #include <msclr\marshal_cppstd.h>
@@ -430,7 +431,7 @@ namespace Calc {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(175, 20);
 			this->textBox1->TabIndex = 3;
-			this->textBox1->Text = L"http://localhost:3000/posts";
+			this->textBox1->Text = L"https://simpleipi-default-rtdb.firebaseio.com/";
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &alertSetup::textBox1_TextChanged);
 			// 
 			// lblJSONServer
@@ -464,7 +465,7 @@ namespace Calc {
 			this->Controls->Add(this->checkboxCellular);
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"alertSetup";
-			this->Text = L"alertSetup";
+			this->Text = L" ";
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->groupBox2->ResumeLayout(false);

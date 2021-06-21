@@ -1,5 +1,6 @@
 #include "sensorSetup.h"
 #include "DFSL_Protocol.h"
+#include "json.h"
 
 #include <sstream>
 

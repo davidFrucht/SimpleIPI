@@ -494,7 +494,6 @@ namespace Calc {
 			   this->sensorToolStripMenuItem->Size = System::Drawing::Size(115, 22);
 			   this->sensorToolStripMenuItem->Text = L"Sensor";
 			   this->sensorToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::sensorToolStripMenuItem_Click);
-			   this->timerHZ->Enabled = true;
 			   // 
 			   // cameraToolStripMenuItem
 			   // 
@@ -531,6 +530,7 @@ namespace Calc {
 			   this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			   this->pictureBox1->TabIndex = 33;
 			   this->pictureBox1->TabStop = false;
+			   this->pictureBox1->Visible = false;
 			   // 
 			   // googleEarthBox
 			   // 
@@ -587,7 +587,7 @@ namespace Calc {
 			   this->webView22->Location = System::Drawing::Point(878, 43);
 			   this->webView22->Name = L"webView22";
 			   this->webView22->Size = System::Drawing::Size(351, 351);
-			   this->webView22->Source = (gcnew System::Uri(L"c:\\bing.html", System::UriKind::Absolute));
+			   this->webView22->Source = (gcnew System::Uri(L"C:\\Calc\\bing.htm", System::UriKind::Absolute));
 			   this->webView22->TabIndex = 42;
 			   this->webView22->Text = L"webView22";
 			   this->webView22->ZoomFactor = 1;
@@ -706,6 +706,7 @@ namespace Calc {
 			   this->btnFastDraw->TabIndex = 56;
 			   this->btnFastDraw->Text = L"Draw Map";
 			   this->btnFastDraw->UseVisualStyleBackColor = true;
+			   this->btnFastDraw->Visible = false;
 			   this->btnFastDraw->Click += gcnew System::EventHandler(this, &MyForm::btnFastDraw_Click);
 			   // 
 			   // checkBoxRemoteConnection
@@ -719,6 +720,7 @@ namespace Calc {
 			   this->checkBoxRemoteConnection->Text = L"Remote Connection";
 			   this->checkBoxRemoteConnection->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			   this->checkBoxRemoteConnection->UseVisualStyleBackColor = true;
+			   this->checkBoxRemoteConnection->Visible = false;
 			   this->checkBoxRemoteConnection->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBoxRemoteConnection_CheckedChanged);
 			   // 
 			   // clocklTmer
@@ -772,6 +774,7 @@ namespace Calc {
 			   // 
 			   // timerHZ
 			   // 
+			   this->timerHZ->Enabled = true;
 			   this->timerHZ->Interval = 300;
 			   this->timerHZ->Tick += gcnew System::EventHandler(this, &MyForm::timerHZ_Tick);
 			   // 

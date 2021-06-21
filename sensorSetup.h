@@ -165,10 +165,10 @@ namespace Calc {
 			this->lblResetOk = (gcnew System::Windows::Forms::Label());
 			this->lblFullResetOK = (gcnew System::Windows::Forms::Label());
 			this->groupBoxHiddenZones = (gcnew System::Windows::Forms::GroupBox());
-			this->checkBoxHZ1 = (gcnew System::Windows::Forms::CheckBox());
-			this->backgroundWorker2 = (gcnew System::ComponentModel::BackgroundWorker());
-			this->picBoxRadarHZ = (gcnew System::Windows::Forms::PictureBox());
 			this->lblHZIndicator = (gcnew System::Windows::Forms::Label());
+			this->checkBoxHZ1 = (gcnew System::Windows::Forms::CheckBox());
+			this->picBoxRadarHZ = (gcnew System::Windows::Forms::PictureBox());
+			this->backgroundWorker2 = (gcnew System::ComponentModel::BackgroundWorker());
 			this->groupBoxSensorParameters->SuspendLayout();
 			this->groupBoxSlave->SuspendLayout();
 			this->groupBoxMaster->SuspendLayout();
@@ -184,6 +184,7 @@ namespace Calc {
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"Advanced Setup";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Visible = false;
 			this->button1->Click += gcnew System::EventHandler(this, &sensorSetup::button1_Click);
 			// 
 			// lblSoftwareVersion
@@ -553,6 +554,17 @@ namespace Calc {
 			this->groupBoxHiddenZones->TabStop = false;
 			this->groupBoxHiddenZones->Text = L"Hidden Zones";
 			// 
+			// lblHZIndicator
+			// 
+			this->lblHZIndicator->AutoSize = true;
+			this->lblHZIndicator->ForeColor = System::Drawing::Color::Red;
+			this->lblHZIndicator->Location = System::Drawing::Point(134, 26);
+			this->lblHZIndicator->Name = L"lblHZIndicator";
+			this->lblHZIndicator->Size = System::Drawing::Size(69, 13);
+			this->lblHZIndicator->TabIndex = 34;
+			this->lblHZIndicator->Text = L"Hidden Zone";
+			this->lblHZIndicator->Visible = false;
+			// 
 			// checkBoxHZ1
 			// 
 			this->checkBoxHZ1->AutoSize = true;
@@ -576,17 +588,6 @@ namespace Calc {
 			this->picBoxRadarHZ->TabStop = false;
 			this->picBoxRadarHZ->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &sensorSetup::picBoxRadarHZ_MouseClick);
 			this->picBoxRadarHZ->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &sensorSetup::picBoxRadarHZ_MouseUp);
-			// 
-			// lblHZIndicator
-			// 
-			this->lblHZIndicator->AutoSize = true;
-			this->lblHZIndicator->ForeColor = System::Drawing::Color::Red;
-			this->lblHZIndicator->Location = System::Drawing::Point(134, 26);
-			this->lblHZIndicator->Name = L"lblHZIndicator";
-			this->lblHZIndicator->Size = System::Drawing::Size(69, 13);
-			this->lblHZIndicator->TabIndex = 34;
-			this->lblHZIndicator->Text = L"Hidden Zone";
-			this->lblHZIndicator->Visible = false;
 			// 
 			// sensorSetup
 			// 
