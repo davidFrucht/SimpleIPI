@@ -19,6 +19,7 @@ char* urlOnvifCamera;
 char* userNameOnVif;
 char* passwordOnVif;
 std::string profileOnVif;
+int kk;
 
 inline void onvifInit(char post[100]);
 
